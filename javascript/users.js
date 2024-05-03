@@ -2,6 +2,8 @@ const searchBar = document.querySelector(".search input"),
 searchIcon = document.querySelector(".search button"),
 usersList = document.querySelector(".users-list");
 
+
+
 searchIcon.onclick = ()=>{
   searchBar.classList.toggle("show");
   searchIcon.classList.toggle("active");
@@ -11,6 +13,7 @@ searchIcon.onclick = ()=>{
     searchBar.classList.remove("active");
   }
 }
+
 
 searchBar.onkeyup = ()=>{
   let searchTerm = searchBar.value;
@@ -37,7 +40,7 @@ setInterval(() =>{
   let xhr = new XMLHttpRequest();
   xhr.open("GET", "php/users.php", true);
   xhr.onload = ()=>{
-    if(xhr.readyState === XMLHttpRequest.DONE){
+    if(xhr.readyState === 4){
         if(xhr.status === 200){
           let data = xhr.response;
           if(!searchBar.classList.contains("active")){

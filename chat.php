@@ -1,5 +1,6 @@
 <?php 
   session_start();
+  include "php/session.php";
   include_once "php/config.php";
   if(!isset($_SESSION['unique_id'])){
     header("location: login.php");
@@ -38,6 +39,5 @@
   </div>
 
   <script src="javascript/chat.js"></script>
-
 </body>
 </html>
