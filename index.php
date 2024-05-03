@@ -1,5 +1,6 @@
 <?php 
   session_start();
+  $_SESSION['loginTime'] = time();
   if(isset($_SESSION['unique_id'])){
     header("location: users.php");
   }
